@@ -110,5 +110,5 @@ Remarquez que dans le cas d'une abbréviation, on suggère de mettre aussi entre
 ```
 
 __En savoir plus sur la sémantique des éléments et attributs HTML__    
-https://developer.mozilla.org/fr/docs/Web/HTML/Element 
+https://developer.mozilla.org/fr/docs/Web/HTML/Element
 
