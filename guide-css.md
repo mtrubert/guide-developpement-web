@@ -152,3 +152,54 @@ Exemple:
      }
 }
 ```
+## Principe de double-classe
+Si on a besoin d'appliquer des styles plus spécifiques à un élément qui partage des traits commun 
+avec d'autres éléments, on pourra créer un modificateur pour cet élément et lui appliquer la classe
+commune et la classe de modificateur plutôt que de répéter les traits communs dans la classe modificateur
+
+Exemple:   
+La navigation dans le bandeau d'entête  
+```html
+     <nav class="nav nav--header" role="navigation">
+         <a class="logo" href="index.html">
+             <img src="images/logo-final.png" alt="Accueil (logo À la manière de)">
+         </a>
+         <ul class="nav__list nav__list--subList">
+             <li class="nav__listItem"><a class="nav__link nav__link--active"
+                                          href="artistes.html">Artistes</a></li>
+             <li class="nav__listItem"><a class="nav__link" href="blogue.html">Blogue</a></li>
+             <li class="nav__listItem"><a class="nav__link" href="ressources.html">Ressources</a></li>
+             <li class="nav__listItem"><a class="nav__link" href="a-propos.html">À&nbsp;propos</a></li>
+         </ul>
+     </nav>
+```
+La navigation dans le pied de page  
+```html
+    <nav class="nav nav--footer">
+        <ul class="nav__list">
+            <li class="nav__listItem"><a class="nav__link nav__link--active" href="artistes.html">Artistes</a></li>
+            <li class="nav__listItem"><a class="nav__link" href="blogue.html">Blogue</a></li>
+            <li class="nav__listItem"><a class="nav__link" href="ressources.html">Ressources</a></li>
+            <li class="nav__listItem"><a class="nav__link" href="a-propos.html">À&nbsp;propos</a></li>
+        </ul>
+    </nav>
+```  
+
+Utilisation dans les styles CSS:
+- des modificateurs (nav--header, nav--footer) 
+- et du principe de double classe (entre nav et les modificateurs)   
+```css
+.nav{
+    font-family: 'News Cycle', sans-serif;
+    text-transform: uppercase;
+}
+.nav--header,
+.nav__list{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.nav--footer{
+    background-color: black;
+}
+```
